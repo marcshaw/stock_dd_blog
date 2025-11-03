@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Dive Digest</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.js" async></script>
 </head>
 <body>
 
@@ -15,7 +13,7 @@
         <div class="search-bar">
             <form id="ticker-search-form" autocomplete="off">
                 <div class="search-input-wrapper">
-                    <input type="text" id="ticker-input" class="awesomplete" placeholder="Search by ticker (e.g., TSLA)" required>
+                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., TSLA)" required>
                     <button type="submit">Search</button>
                 </div>
             </form>
@@ -101,7 +99,7 @@
                 <div class="post-meta">
                     <span class="date">2024-01-01</span> &middot; <span class="ticker">TSLA</span>
                 </div>
-                <h3><a href="/tsla/show.html">Test Tesla Post: A New Beginning</a></h3>
+                <h3><a href="/tsla/1/index.html">Test Tesla Post: A New Beginning</a></h3>
                 <p class="summary">This is a test summary for a new Tesla blog post entry.</p>
                 <div class="analysis">
                     <h4>LLM Research Deep Dives</h4>
@@ -128,8 +126,6 @@
 
 <script>
     const tickers = ['TSLA', 'BTC', 'NVDA'];
-    const input = document.getElementById("ticker-input");
-    new Awesomplete(input, {list: tickers});
 
     document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
         event.preventDefault();
