@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Dive Digest</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
 
     <header>
         <h1><a href="/">Deep Dive Digest</a></h1>
-        <div class="search-bar">
-            <form id="ticker-search-form" autocomplete="off">
-                <div class="search-input-wrapper">
-                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., POET)" required>
-                    <button type="submit">Search</button>
-                </div>
-            </form>
-        </div>
     </header>
 
     <main>
-        <div class="intro">
-            <h2>AI-powered deep dives on stocks and crypto.</h2>
-        </div>
-
+        <a href="../index.html" style="text-decoration: none; color: #4a5a6a; display: inline-block; margin-bottom: 20px;">&larr; Back to all posts</a>
+        
         <div class="post-list">
             <article class="post">
                 <div class="post-meta">
                     <span class="date">2025-11-03</span> &middot; <span class="ticker">POET</span>
                 </div>
-                <h3><a href="/poet/1/index.html">POET Technologies: The Photon Dealer Powering AI Data Centers</a></h3>
+                <h3>POET Technologies: The Photon Dealer Powering AI Data Centers</h3>
                 <p class="summary">POET Technologies makes optical interconnect engines that enable AI data centers to transmit data at light speed, addressing critical bandwidth bottlenecks in GPU-to-GPU communication. The company recently secured $225M in capital through two oversubscribed offerings and landed its first $5M production order for 800G optical engines, signaling a transition from development to revenue generation. With a sub-$900M market cap targeting a multi-billion dollar photonics market and institutional investors paying premium prices, POET represents a high-risk, high-reward bet on the infrastructure powering AI's exponential growth.</p>
+                
                 <div class="analysis">
                     <h4>LLM Research Deep Dives</h4>
                     <details>
@@ -40,7 +31,19 @@
                     </details>
                     <details>
                         <summary>Claude Analysis</summary>
-                        <p>Claude focuses on the fundamental market opportunity and POET's technical differentiation. The optical interconnect market is projected to grow from $4.5B (2023) to $16B (2028) at 30% CAGR, driven by AI data center bandwidth demands that copper simply cannot meet. Claude breaks down POET's Optical Interposer technology, noting its vertical integration advantage - the company controls both design and manufacturing through its Malaysia facility, unlike competitors dependent on third-party foundries. The analysis stresses execution risk: revenue inflection depends entirely on meeting 2026 production targets for the $5M order, and the $300M+ cash position provides runway but also dilution risk if milestones slip.</p>
+                        <p>POET Technologies is a photonics company with a market cap around $500-870M as of late October 2025, operating in the rapidly growing AI data center connectivity space.</p>
+
+                        <p><strong>Market Context:</strong><br>
+                        The optical components market for data centers was $17B in 2024, with AI-driven data centers now accounting for over 60% of demand. The cloud data center photonics market is projected to grow from $4.5B in 2023 to $16B by 2028, representing approximately 30% compound annual growth. The co-packaged optics market is projected to reach $8.1B by 2030 from just $46M in 2024, representing a 137% compound annual growth rate.</p>
+
+                        <p><strong>POET's Recent Catalysts (Verified):</strong><br>
+                        The company closed a $150M oversubscribed offering on October 28, 2025, with pro-forma cash position exceeding $300M. It received a $5M production order for 800G optical engines on October 22, 2025, with shipments expected in the second half of 2026. Additionally, POET closed a $75M investment on October 7, 2025 to accelerate AI connectivity solutions. Partnerships were announced with Semtech and Sivers Semiconductors for AI market solutions.</p>
+
+                        <p><strong>Competitive Landscape:</strong><br>
+                        Main competitors include Ayar Labs (which has raised $219.7M), Lightmatter ($420M raised, achieving unicorn status), and Celestial AI ($338.9M raised). POET's edge lies in vertical integration—the company controls both design and production through its Malaysia cleanroom, minimizing third-party foundry dependency that affects many competitors.</p>
+
+                        <p><strong>Risk Factors:</strong><br>
+                        POET is pre-revenue with 2024 revenue of just $41,427, down 91% from 2023. High research and development costs ($4.3M in Q1 2025) create cash burn concerns. Revenue inflection depends on 2026 production timelines meeting targets. The company faces competition from well-funded rivals with strategic backing from major tech companies like NVIDIA, AMD, and Intel.</p>
                     </details>
                     <details>
                         <summary>Gemini Analysis</summary>
@@ -55,20 +58,5 @@
         <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
     </footer>
 
-<script>
-    const tickers = ['POET'];
-
-    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
-        if (ticker) {
-            if (tickers.includes(ticker)) {
-                window.location.href = `/${ticker.toLowerCase()}/index.html`;
-            } else {
-                window.location.href = '/404.html';
-            }
-        }
-    });
-</script>
 </body>
 </html>
