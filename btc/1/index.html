@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive Digest</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.js" async></script>
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">Deep Dive Digest</a></h1>
+        <div class="search-bar">
+            <form id="ticker-search-form" autocomplete="off">
+                <div class="search-input-wrapper">
+                    <input type="text" id="ticker-input" class="awesomplete" placeholder="Search by ticker (e.g., TSLA)" required>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2023-09-01</span> &middot; <span class="ticker">BTC</span>
+                </div>
+                <h3>Bitcoin Halving Cycle: A Crypto Investor's Guide</h3>
+                <p class="summary">This post explains the mechanics of the Bitcoin halving, its historical impact on price, and theories on how the next halving event might play out. It covers on-chain metrics, market psychology, and the role of institutional adoption.</p>
+                <div class="analysis">
+                    <h4>LLM Research Deep Dives</h4>
+                    <details>
+                        <summary>ChatGPT Analysis</summary>
+                        <p>ChatGPT provides a historical performance analysis, charting Bitcoin's price action 12 months before and after previous halvings. It uses this data to project a potential price range for the next cycle, while heavily cautioning that past performance is not indicative of future results. It also summarizes the common narratives and counter-arguments found across various crypto forums.</p>
+                    </details>
+                    <details>
+                        <summary>Claude Analysis</summary>
+                        <p>Claude's analysis delves into the economic principles of the halving, comparing it to scarcity models in traditional commodities like gold. It explains the stock-to-flow model in simple terms, critiques its limitations, and offers alternative valuation frameworks. The model emphasizes the shift in mining economics and its potential impact on network security.</p>
+                    </details>
+                    <details>
+                        <summary>Gemini Analysis</summary>
+                        <p>Gemini assesses the macro-economic context. It overlays the Bitcoin halving cycle with global interest rate policies, inflation data, and stock market performance. The analysis suggests the next halving will occur in a vastly different macro environment than previous ones, potentially dampening its bullish effect. It also explores the impact of ETFs on demand dynamics post-halving.</p>
+                    </details>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
+    </footer>
+
+<script>
+    const tickers = ['TSLA', 'BTC', 'NVDA'];
+    const input = document.getElementById("ticker-input");
+    new Awesomplete(input, {list: tickers});
+
+    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
+        if (ticker) {
+            if (tickers.includes(ticker)) {
+                window.location.href = `/${ticker.toLowerCase()}/index.html`;
+            } else {
+                window.location.href = '/404.html';
+            }
+        }
+    });
+</script>
+</body>
+</html>

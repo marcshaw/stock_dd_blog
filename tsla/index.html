@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive Digest</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.js" async></script>
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">Deep Dive Digest</a></h1>
+        <div class="search-bar">
+            <form id="ticker-search-form" autocomplete="off">
+                <div class="search-input-wrapper">
+                    <input type="text" id="ticker-input" class="awesomplete" placeholder="Search by ticker (e.g., TSLA)" required>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>AI-powered deep dives on stocks and crypto.</h2>
+        </div>
+
+        <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2023-08-15</span> &middot; <span class="ticker">TSLA</span>
+                </div>
+                <h3><a href="./1/index.html">Deep Dive into Tesla's Q2 Earnings and Future Outlook</a></h3>
+                <p class="summary">An in-depth analysis of Tesla's recent quarterly performance, focusing on production numbers, margin compression, and the launch of the Cybertruck. The post explores potential risks and catalysts for the stock in the coming months.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
+    </footer>
+
+<script>
+    const tickers = ['TSLA', 'BTC', 'NVDA'];
+    const input = document.getElementById("ticker-input");
+    new Awesomplete(input, {list: tickers});
+
+    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
+        if (ticker) {
+            if (tickers.includes(ticker)) {
+                window.location.href = `/${ticker.toLowerCase()}/index.html`;
+            } else {
+                window.location.href = '/404.html';
+            }
+        }
+    });
+</script>
+</body>
+</html>

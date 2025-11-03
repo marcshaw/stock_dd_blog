@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive Digest</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.js" async></script>
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">Deep Dive Digest</a></h1>
+        <div class="search-bar">
+            <form id="ticker-search-form" autocomplete="off">
+                <div class="search-input-wrapper">
+                    <input type="text" id="ticker-input" class="awesomplete" placeholder="Search by ticker (e.g., TSLA)" required>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2023-09-10</span> &middot; <span class="ticker">NVDA</span>
+                </div>
+                <h3>NVIDIA: Riding the AI Wave or an Overvalued Bet?</h3>
+                <p class="summary">A comprehensive look at NVIDIA's dominant position in the AI chip market. The DD examines the company's moat, competitive landscape, valuation multiples, and the sustainability of its explosive growth.</p>
+                <div class="analysis">
+                    <h4>LLM Research Deep Dives</h4>
+                    <details>
+                        <summary>ChatGPT Analysis</summary>
+                        <p>ChatGPT performs a competitive analysis, comparing NVIDIA's GPU architecture (CUDA) with offerings from AMD and Intel. It highlights the "stickiness" of the CUDA ecosystem as a significant competitive advantage. The AI also scrapes and summarizes recent academic papers to show NVIDIA's prevalence in AI research, reinforcing its market leadership.</p>
+                    </details>
+                    <details>
+                        <summary>Claude Analysis</summary>
+                        <p>Claude breaks down the valuation. It compares NVIDIA's P/E, P/S, and PEG ratios to semiconductor industry averages and other high-growth tech companies. The model runs several Discounted Cash Flow (DCF) scenarios based on different growth assumptions presented in the DD, providing a range of intrinsic value estimates. It highlights the extreme sensitivity of the valuation to long-term growth rate assumptions.</p>
+                    </details>
+                    <details>
+                        <summary>Gemini Analysis</summary>
+                        <p>Gemini focuses on the Total Addressable Market (TAM) for AI chips. It synthesizes market research reports to validate or challenge the TAM estimates in the original post. The analysis also explores potential "black swan" risks, such as the development of non-GPU-based AI accelerators (e.g., ASICs, TPUs) and geopolitical risks related to its manufacturing dependence on TSMC.</p>
+                    </details>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
+    </footer>
+
+<script>
+    const tickers = ['TSLA', 'BTC', 'NVDA'];
+    const input = document.getElementById("ticker-input");
+    new Awesomplete(input, {list: tickers});
+
+    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
+        if (ticker) {
+            if (tickers.includes(ticker)) {
+                window.location.href = `/${ticker.toLowerCase()}/index.html`;
+            } else {
+                window.location.href = '/404.html';
+            }
+        }
+    });
+</script>
+</body>
+</html>

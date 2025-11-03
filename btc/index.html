@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive Digest</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.7/awesomplete.min.js" async></script>
+</head>
+<body>
+
+    <header>
+        <h1><a href="/">Deep Dive Digest</a></h1>
+        <div class="search-bar">
+            <form id="ticker-search-form" autocomplete="off">
+                <div class="search-input-wrapper">
+                    <input type="text" id="ticker-input" class="awesomplete" placeholder="Search by ticker (e.g., TSLA)" required>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <div class="intro">
+            <h2>AI-powered deep dives on stocks and crypto.</h2>
+        </div>
+
+        <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2023-09-01</span> &middot; <span class="ticker">BTC</span>
+                </div>
+                <h3><a href="./1/index.html">Bitcoin Halving Cycle: A Crypto Investor's Guide</a></h3>
+                <p class="summary">This post explains the mechanics of the Bitcoin halving, its historical impact on price, and theories on how the next halving event might play out. It covers on-chain metrics, market psychology, and the role of institutional adoption.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
+    </footer>
+
+<script>
+    const tickers = ['TSLA', 'BTC', 'NVDA'];
+    const input = document.getElementById("ticker-input");
+    new Awesomplete(input, {list: tickers});
+
+    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
+        if (ticker) {
+            if (tickers.includes(ticker)) {
+                window.location.href = `/${ticker.toLowerCase()}/index.html`;
+            } else {
+                window.location.href = '/404.html';
+            }
+        }
+    });
+</script>
+</body>
+</html>
