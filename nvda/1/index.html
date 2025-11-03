@@ -10,17 +10,11 @@
 
     <header>
         <h1><a href="/">Deep Dive Digest</a></h1>
-        <div class="search-bar">
-            <form id="ticker-search-form" autocomplete="off">
-                <div class="search-input-wrapper">
-                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., TSLA)" required>
-                    <button type="submit">Search</button>
-                </div>
-            </form>
-        </div>
     </header>
 
     <main>
+        <a href="../index.html" style="text-decoration: none; color: #4a5a6a; display: inline-block; margin-bottom: 20px;">&larr; Back to all posts</a>
+        
         <div class="post-list">
             <article class="post">
                 <div class="post-meta">
@@ -51,20 +45,5 @@
         <p>&copy; 2024 Deep Dive Digest. All rights reserved.</p>
     </footer>
 
-<script>
-    const tickers = ['TSLA', 'BTC', 'NVDA'];
-
-    document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const ticker = document.getElementById('ticker-input').value.trim().toUpperCase();
-        if (ticker) {
-            if (tickers.includes(ticker)) {
-                window.location.href = `/${ticker.toLowerCase()}/index.html`;
-            } else {
-                window.location.href = '/404.html';
-            }
-        }
-    });
-</script>
 </body>
 </html>
