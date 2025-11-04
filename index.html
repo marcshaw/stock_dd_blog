@@ -13,7 +13,7 @@
         <div class="search-bar">
             <form id="ticker-search-form" autocomplete="off">
                 <div class="search-input-wrapper">
-                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., POET)" required>
+                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., POET, RBLX)" required>
                     <button type="submit">Search</button>
                 </div>
             </form>
@@ -26,6 +26,14 @@
         </div>
 
         <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2025-11-04</span> &middot; <span class="ticker">RBLX</span>
+                </div>
+                <h3><a href="/rblx/1/index.html">Roblox: Battleground Stock Between Growth Dreams and Safety Nightmares</a></h3>
+                <p class="summary">Roblox faces a critical crossroads as explosive user growth (70% YoY DAU increase to 151.5M) collides with mounting regulatory scrutiny over child safety failures. The platform generates strong free cash flow ($443M in Q3 2025) despite GAAP losses, but trades at a premium 17.9x sales valuation that leaves no room for error. With state Attorneys General filing lawsuits calling the platform a "hunting ground for predators" while Wall Street maintains 78% buy ratings, RBLX represents a binary bet on whether management can win a two-front war: fixing platform safety while growing into its massive valuation.</p>
+            </article>
+
             <article class="post">
                 <div class="post-meta">
                     <span class="date">2025-11-03</span> &middot; <span class="ticker">POET</span>
@@ -41,7 +49,7 @@
     </footer>
 
 <script>
-    const tickers = ['POET'];
+    const tickers = ['RBLX', 'POET'];
 
     document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
         event.preventDefault();
