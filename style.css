@@ -99,6 +99,11 @@ header h1 {
     font-size: 1rem;
 }
 
+.analysis h6 {
+    font-family: Georgia, serif;
+    font-size: 0.8rem;
+}
+
 .analysis details {
     margin-bottom: 15px;
     border-left: 3px solid #e0e0e0;
