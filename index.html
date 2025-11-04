@@ -13,7 +13,7 @@
         <div class="search-bar">
             <form id="ticker-search-form" autocomplete="off">
                 <div class="search-input-wrapper">
-                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., POET, RBLX)" required>
+                    <input type="text" id="ticker-input" placeholder="Search by ticker (e.g., QUBT, POET, RBLX)" required>
                     <button type="submit">Search</button>
                 </div>
             </form>
@@ -26,6 +26,14 @@
         </div>
 
         <div class="post-list">
+            <article class="post">
+                <div class="post-meta">
+                    <span class="date">2025-11-04</span> &middot; <span class="ticker">QUBT</span>
+                </div>
+                <h3><a href="/qubt/1/index.html">Quantum Computing Inc: Fraud Allegations vs. $1.6B War Chest Reality</a></h3>
+                <p class="summary">Quantum Computing Inc faces devastating fraud allegations from short sellers Iceberg Research and Capybara Research, who claim the company fabricated revenue, misrepresented NASA relationships, and operates a fake TFLN foundry. Despite generating only $263,000 in annual revenue while burning tens of millions, QUBT raised $1.64 billion in 2025 and commands a $2.6-3.8B market cap—over 10,000x sales. With 10+ securities law firms pursuing class action lawsuits, an auditor shut down by the SEC for massive fraud, and management exodus with insider selling at peak prices, QUBT represents either the most brazen quantum computing fraud or an extremely early-stage photonics bet trading at an absurd valuation.</p>
+            </article>
+
             <article class="post">
                 <div class="post-meta">
                     <span class="date">2025-11-04</span> &middot; <span class="ticker">RBLX</span>
@@ -49,7 +57,7 @@
     </footer>
 
 <script>
-    const tickers = ['POET', 'RBLX', 'QUBT'];
+    const tickers = ['QUBT', 'RBLX', 'POET'];
 
     document.getElementById('ticker-search-form').addEventListener('submit', function(event) {
         event.preventDefault();
