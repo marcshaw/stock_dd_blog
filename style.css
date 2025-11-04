@@ -86,6 +86,11 @@ header h1 {
     margin-bottom: 20px;
 }
 
+.analysis h5 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+}
+
 .analysis details {
     margin-bottom: 15px;
     border-left: 3px solid #e0e0e0;
