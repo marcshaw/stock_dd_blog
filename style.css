@@ -7,6 +7,14 @@ body {
     padding: 0;
 }
 
+.post-meta a {
+  color: #ff4500;
+  text-decoration: none;
+}
+.post-meta a:hover {
+  text-decoration: underline;
+}
+
 header, main, footer {
     max-width: 800px;
     margin: 0 auto;
